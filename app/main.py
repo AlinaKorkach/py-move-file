@@ -2,8 +2,9 @@ import os
 
 
 def move_file(command: str) -> None:
-    if len(command.split()) == 3:
-        user_command, file_name, path = command.split()
+    parts = command.split()
+    if len(parts) == 3:
+        user_command, file_name, path = parts
         if user_command == "mv":
             with open(file_name, "r") as content:
                 file_content = content.read()
